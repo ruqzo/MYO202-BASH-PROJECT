@@ -1,5 +1,5 @@
 #!/bin/bash
-# İsim SOYİSİM: Özgür Sulhan
+# İsim Soyisim: Özgür Sulhan
 # Öğrenci Numarası: 2420171011
 # Sertifika Bağlantıları 
 # 1. Docker Temelleri: https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=D2xhEe6Wo0
@@ -7,7 +7,7 @@
 # 3. Linux Bash Script: https://credsverse.com/credentials/cc0038cf-de0e-422b-963a-4dd3a57b7ed1
 
 # ISO formatında tarih/saat yazdırılarak log dosyasının oluşturulması
-echo "Başlangıç: $(date +"%Y-%m-%dT%H:%M:%S%z")" > report.log
+echo "Başlangıç: $(date +"%Y-%m-%d %H:%M:%S")" > report.log
 
 # İşletim sistemini tespit edip uygun komutları çalıştıran IF bloğu
 OSTYPE=$(uname -s)
@@ -35,7 +35,6 @@ if [[ "$OSTYPE" == *"MINGW"* ]] || [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" =
     getmac >> report.log
 
 elif [[ "$OSTYPE" == *"Darwin"* ]]; then
-    
     echo "=== MacOS Donanım Bilgileri ===" >> report.log
     system_profiler SPHardwareDataType >> report.log
     ifconfig >> report.log
